@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MediTrack</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #283c86, #45a247); /* Gradient background */
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .welcome-container {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            backdrop-filter: blur(10px); /* Glassmorphism effect */
+        }
+
+        h1 {
+            color: #64b5f6; /* Cool blue heading */
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: #d1d1d1;
+        }
+
+        .track-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(to right, #64b5f6, #4fc3f7); /* Gradient button */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .track-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Welcome to MediTrack!</h1>
+        <p>Your health journey is important to us. Click the button below to access your personalized tracking information.</p>
+        <a href="{% url 'tracking_page' %}" class="track-button">Access Tracking</a>
+    </div>
+</body>
+</html>

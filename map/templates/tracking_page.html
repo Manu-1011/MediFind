@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Map - MediFind</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Base reset & typography */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #2d3436;
+      overflow-x: hidden;
+    }
+
+    /* Top navigation bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2196F3;
+    }
+    .navbar .view-toggle {
+      display: flex;
+      gap: 10px;
+    }
+    .navbar .view-toggle button {
+      background: #fff;
+      border: 2px solid #2196F3;
+      color: #2196F3;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+    .navbar .view-toggle button:hover {
+      background-color: #e3f2fd;
+    }
+    .navbar .view-toggle button.active {
+      background-color: #2196F3;
+      color: #fff;
+    }
+
+    /* Container for everything below the navbar */
+    .main-container {
+      display: flex;
+      height: calc(100vh - 60px); /* fill screen minus navbar height */
+    }
+
+    /* Left filter panel */
+    .filters-panel {
+      width: 300px;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 2px 0 6px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      overflow-y: auto;
+    }
+
+    .filters-panel h2 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #2196F3;
+    }
+
+    
+
+    /* Specialty buttons container */
+    #specialtyButtons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    #specialtyButtons button {
+      background: #e3f2fd;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #2196F3;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    #specialtyButtons button.selected {
+      background: #2196F3;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+    }
+    #specialtyButtons button:hover:not(.selected) {
+      background-color: #bbdefb;
+    }
+
+    /* The "Find Hospitals" button at bottom of filter panel */
+    .search-btn {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: auto;
+      align-self: flex-start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .search-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Map area */
+    .map-container {
+      flex: 1;
+      position: relative;
+    }
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Scroll fix for small screens */
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+      }
+      .filters-panel {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .filter-group {
+        width: 100%;
+      }
+      #specialtyButtons {
+        justify-content: flex-start;
+      }
+      .search-btn {
+        margin-top: 15px;
+      }
+      #map {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <div class="navbar">
+    <div class="logo">MediFind</div>
+    <div class="view-toggle">
+      <!-- If you have a list view, you can handle toggling here -->
+      <button class="active">Map</button>
+    </div>
+  </div>
+
+  <!-- Main Container: Sidebar + Map -->
+  <div class="main-container">
+    <!-- Left Panel (Filters) -->
+    <div class="filters-panel">
+      
+      <h2>Specialties</h2>
+      <div id="specialtyButtons">
+        <!-- Dynamically populated -->
+      </div>
+
+      <!-- Search Button -->
+      <button class="search-btn" onclick="fetchHospitals()">Find Hospitals</button>
+    </div>
+
+    <!-- Map Container -->
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize map
+    const map = L.map('map').setView([12.9716, 77.5946], 12); // Center on Bangalore
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // Create a custom red icon for markers (similar to the screenshot)
+    const redIcon = L.icon({
+      iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34]
+    });
+
+    let selectedSpecialties = [];
+
+    // Fetch specialties and create buttons
+    fetch('/api/specialties/')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch specialties');
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (!data || data.length === 0) {
+          alert('No specialties found.');
+          return;
+        }
+        const buttonContainer = document.getElementById('specialtyButtons');
+        data.forEach(specialty => {
+          const button = document.createElement('button');
+          button.textContent = specialty.name;
+          button.onclick = () => toggleSpecialty(specialty.name, button);
+          buttonContainer.appendChild(button);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching specialties:', error);
+        alert('Failed to load specialties.');
+      });
+
+    // Toggle specialty selection
+    function toggleSpecialty(specialtyName, button) {
+      const index = selectedSpecialties.indexOf(specialtyName);
+      if (index === -1) {
+        selectedSpecialties.push(specialtyName);
+        button.classList.add('selected');
+      } else {
+        selectedSpecialties.splice(index, 1);
+        button.classList.remove('selected');
+      }
+    }
+
+    // Fetch hospitals and place red markers
+    function fetchHospitals() {
+      // Optional: you could gather more filters here (city, minBeds, etc.) if your backend supports them
+      if (selectedSpecialties.length === 0) {
+        alert('Please select at least one specialty.');
+        return;
+      }
+      const url = `/api/hospitals/?${selectedSpecialties
+        .map(s => `specialties=${encodeURIComponent(s)}`)
+        .join('&')}`;
+
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch hospitals');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Remove existing markers
+          map.eachLayer(layer => {
+            if (layer instanceof L.Marker) {
+              map.removeLayer(layer);
+            }
+          });
+
+          if (!data || data.length === 0) {
+            alert('No hospitals found for the selected specialties.');
+            return;
+          }
+
+          // Add a marker for each hospital
+          data.forEach(hospital => {
+            const marker = L.marker(
+              [hospital.latitude, hospital.longitude],
+              { icon: redIcon } // Use the custom red icon
+            ).bindPopup(
+              `<strong>${hospital.name}</strong><br>${hospital.address}`
+            );
+            marker.addTo(map);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching hospitals:', error);
+          alert('Failed to load hospitals.');
+        });
+    }
+  </script>
+</body>
+</html>
