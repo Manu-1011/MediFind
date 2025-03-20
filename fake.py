@@ -7,7 +7,7 @@ fake = Faker()
 # Bangalore coordinates range
 BANGALORE_LAT = (12.85, 13.20)
 BANGALORE_LON = (77.45, 77.75)
-
+bu=369
 # Common specialties (expand as needed)
 SPECIALTIES  = [
     "Cardiology", 
@@ -41,6 +41,7 @@ def generate_hospital():
         "fields": {
             "name": fake.company() + " Hospital",
             "address": fake.street_address() + ", Bengaluru, Karnataka " + fake.postcode(),
+            "district": bu, 
             "latitude": lat,
             "longitude": lon,
             "specialty": random.sample(SPECIALTY_IDS, k=random.randint(2, 3))

@@ -2,121 +2,44 @@
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Pearson-Dean Hospital",
-      "address": "6570 Randy Tunnel, Bengaluru, Karnataka 54618",
-      "latitude": 13.055,
-      "longitude": 77.4527,
+      "name": "Cordova-Goodwin Hospital",
+      "address": "118 Bates Heights, Bengaluru, Karnataka 92256",
+      "district": 369,
+      "latitude": 13.001,
+      "longitude": 77.602,
       "specialty": [
-        16,
-        6,
-        8
+        8,
+        18,
+        14
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Berry, Jones and Hill Hospital",
-      "address": "5185 Erik Crossroad Apt. 956, Bengaluru, Karnataka 42278",
-      "latitude": 13.1036,
-      "longitude": 77.5424,
+      "name": "Crane Ltd Hospital",
+      "address": "0143 Donald Via, Bengaluru, Karnataka 31009",
+      "district": 369,
+      "latitude": 13.1292,
+      "longitude": 77.6491,
       "specialty": [
-        6,
-        11,
-        4
+        3,
+        17,
+        7
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Marquez Inc Hospital",
-      "address": "5414 Daniel Tunnel, Bengaluru, Karnataka 58772",
-      "latitude": 13.0668,
-      "longitude": 77.634,
-      "specialty": [
-        10,
-        18
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Shah-Bowen Hospital",
-      "address": "1176 Cameron Keys Apt. 497, Bengaluru, Karnataka 06179",
-      "latitude": 12.9652,
-      "longitude": 77.7474,
-      "specialty": [
-        15,
-        11,
-        18
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Rogers-Richards Hospital",
-      "address": "494 Carol Shoals Suite 238, Bengaluru, Karnataka 92010",
-      "latitude": 13.0315,
-      "longitude": 77.4529,
-      "specialty": [
-        13,
-        9,
-        11
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Johnson PLC Hospital",
-      "address": "04677 Doyle Street, Bengaluru, Karnataka 68630",
-      "latitude": 13.159,
-      "longitude": 77.6248,
-      "specialty": [
-        13,
-        18
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Hubbard, Obrien and Johnson Hospital",
-      "address": "60025 Patrick Tunnel, Bengaluru, Karnataka 58437",
-      "latitude": 12.8547,
-      "longitude": 77.4669,
+      "name": "White-Black Hospital",
+      "address": "6403 Walker Lane, Bengaluru, Karnataka 81060",
+      "district": 369,
+      "latitude": 13.1363,
+      "longitude": 77.4547,
       "specialty": [
         6,
-        5,
-        2
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Andrews, Davis and Smith Hospital",
-      "address": "3726 Velazquez Radial, Bengaluru, Karnataka 13402",
-      "latitude": 13.163,
-      "longitude": 77.5775,
-      "specialty": [
-        7,
-        6
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Woodward-Larson Hospital",
-      "address": "2636 Johnson Shore, Bengaluru, Karnataka 20350",
-      "latitude": 13.0508,
-      "longitude": 77.7339,
-      "specialty": [
-        1,
+        14,
         17
       ]
     }
@@ -124,49 +47,347 @@
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Thompson-Smith Hospital",
-      "address": "72994 Jessica Centers Suite 795, Bengaluru, Karnataka 48999",
-      "latitude": 13.0031,
-      "longitude": 77.4925,
+      "name": "Klein LLC Hospital",
+      "address": "9902 Evans Cliff, Bengaluru, Karnataka 09354",
+      "district": 369,
+      "latitude": 12.962,
+      "longitude": 77.4512,
       "specialty": [
-        17,
-        4
+        14,
+        4,
+        12
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Avery, Johnson and Romero Hospital",
-      "address": "580 Perez Drive, Bengaluru, Karnataka 81811",
-      "latitude": 12.8772,
-      "longitude": 77.7143,
+      "name": "West-Howell Hospital",
+      "address": "625 Holly Views Suite 848, Bengaluru, Karnataka 54125",
+      "district": 369,
+      "latitude": 12.8977,
+      "longitude": 77.5151,
       "specialty": [
-        1,
-        4
+        8,
+        6,
+        17
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Gibbs-Bell Hospital",
-      "address": "586 Lauren Canyon Suite 093, Bengaluru, Karnataka 24854",
-      "latitude": 13.1499,
-      "longitude": 77.6334,
+      "name": "Allen LLC Hospital",
+      "address": "6630 Lisa Burg, Bengaluru, Karnataka 57205",
+      "district": 369,
+      "latitude": 12.8997,
+      "longitude": 77.517,
+      "specialty": [
+        9,
+        4,
+        7
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Moore PLC Hospital",
+      "address": "7263 Bright Key Suite 026, Bengaluru, Karnataka 46049",
+      "district": 369,
+      "latitude": 13.0815,
+      "longitude": 77.4694,
       "specialty": [
         15,
-        5
+        9
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Li, Douglas and Marshall Hospital",
-      "address": "0037 Rodriguez Junctions Apt. 857, Bengaluru, Karnataka 96312",
-      "latitude": 12.85,
-      "longitude": 77.5648,
+      "name": "Franklin-Wood Hospital",
+      "address": "619 Diaz Island Suite 658, Bengaluru, Karnataka 69007",
+      "district": 369,
+      "latitude": 12.9222,
+      "longitude": 77.5312,
+      "specialty": [
+        2,
+        7
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Martinez-Mata Hospital",
+      "address": "366 Alan Harbors, Bengaluru, Karnataka 15549",
+      "district": 369,
+      "latitude": 13.1061,
+      "longitude": 77.6347,
+      "specialty": [
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Williams Inc Hospital",
+      "address": "1582 Marks Roads Suite 775, Bengaluru, Karnataka 48987",
+      "district": 369,
+      "latitude": 12.8969,
+      "longitude": 77.7335,
+      "specialty": [
+        2,
+        18
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Foster-Nielsen Hospital",
+      "address": "249 Rose Overpass, Bengaluru, Karnataka 12995",
+      "district": 369,
+      "latitude": 12.9812,
+      "longitude": 77.5418,
+      "specialty": [
+        1,
+        8,
+        14
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Stewart, Miller and Lindsey Hospital",
+      "address": "644 Howard Glen Apt. 789, Bengaluru, Karnataka 77521",
+      "district": 369,
+      "latitude": 13.0939,
+      "longitude": 77.5419,
+      "specialty": [
+        18,
+        3
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Adams, Leblanc and Carter Hospital",
+      "address": "23184 Hall Mountains Suite 440, Bengaluru, Karnataka 11939",
+      "district": 369,
+      "latitude": 12.9529,
+      "longitude": 77.6643,
+      "specialty": [
+        9,
+        18,
+        4
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Scott, Thompson and Carroll Hospital",
+      "address": "7772 Stephanie Curve, Bengaluru, Karnataka 65651",
+      "district": 369,
+      "latitude": 13.1367,
+      "longitude": 77.5388,
+      "specialty": [
+        13,
+        12,
+        1
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Smith Group Hospital",
+      "address": "2429 Holly Orchard Suite 486, Bengaluru, Karnataka 75448",
+      "district": 369,
+      "latitude": 13.0654,
+      "longitude": 77.6485,
+      "specialty": [
+        8,
+        16,
+        13
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Fox-Rios Hospital",
+      "address": "4283 Richardson Vista Apt. 345, Bengaluru, Karnataka 87588",
+      "district": 369,
+      "latitude": 13.0237,
+      "longitude": 77.5434,
+      "specialty": [
+        6,
+        17,
+        9
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Harper, Cook and Bird Hospital",
+      "address": "5894 Bullock Canyon Suite 448, Bengaluru, Karnataka 46437",
+      "district": 369,
+      "latitude": 13.0893,
+      "longitude": 77.5291,
+      "specialty": [
+        4,
+        10,
+        3
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Castillo-Harper Hospital",
+      "address": "0687 Michael Fork Suite 939, Bengaluru, Karnataka 73417",
+      "district": 369,
+      "latitude": 13.0865,
+      "longitude": 77.4542,
+      "specialty": [
+        3,
+        2,
+        12
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Chen, Griffith and Bowman Hospital",
+      "address": "1717 Fisher Points Suite 339, Bengaluru, Karnataka 54752",
+      "district": 369,
+      "latitude": 13.0902,
+      "longitude": 77.6428,
+      "specialty": [
+        5,
+        12,
+        6
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Aguirre, Barnes and Mcdaniel Hospital",
+      "address": "70718 Everett Gateway, Bengaluru, Karnataka 70056",
+      "district": 369,
+      "latitude": 13.188,
+      "longitude": 77.5871,
+      "specialty": [
+        2,
+        7
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Sullivan, Sandoval and Curry Hospital",
+      "address": "28545 Casey Locks, Bengaluru, Karnataka 24062",
+      "district": 369,
+      "latitude": 13.0358,
+      "longitude": 77.5512,
+      "specialty": [
+        6,
+        5,
+        7
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Patel and Sons Hospital",
+      "address": "133 Knight Extension Apt. 135, Bengaluru, Karnataka 52628",
+      "district": 369,
+      "latitude": 12.8608,
+      "longitude": 77.5404,
+      "specialty": [
+        5,
+        11,
+        17
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Montgomery and Sons Hospital",
+      "address": "5852 Rivera Loaf, Bengaluru, Karnataka 04396",
+      "district": 369,
+      "latitude": 12.9748,
+      "longitude": 77.6392,
+      "specialty": [
+        4,
+        2
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Bowman-Patterson Hospital",
+      "address": "44085 Larson Fall, Bengaluru, Karnataka 42316",
+      "district": 369,
+      "latitude": 12.9438,
+      "longitude": 77.6654,
+      "specialty": [
+        13,
+        11
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Hurst, Wolfe and Johnson Hospital",
+      "address": "037 Taylor Route Apt. 842, Bengaluru, Karnataka 38292",
+      "district": 369,
+      "latitude": 12.8734,
+      "longitude": 77.7468,
+      "specialty": [
+        13,
+        6,
+        1
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Williams, Chen and Coleman Hospital",
+      "address": "050 Aaron Valley Apt. 585, Bengaluru, Karnataka 98087",
+      "district": 369,
+      "latitude": 13.1012,
+      "longitude": 77.5864,
+      "specialty": [
+        10,
+        16
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Smith-Perez Hospital",
+      "address": "11867 Villa Groves, Bengaluru, Karnataka 83122",
+      "district": 369,
+      "latitude": 13.1317,
+      "longitude": 77.5767,
       "specialty": [
         16,
         9
@@ -176,156 +397,41 @@
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Burns, Gaines and Mendoza Hospital",
-      "address": "452 Sarah Cliff Apt. 364, Bengaluru, Karnataka 38360",
-      "latitude": 13.1435,
-      "longitude": 77.7179,
-      "specialty": [
-        2,
-        3
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Lutz, Smith and Kirby Hospital",
-      "address": "803 Joshua River Suite 951, Bengaluru, Karnataka 95664",
-      "latitude": 12.957,
-      "longitude": 77.511,
+      "name": "Wilkinson-Santana Hospital",
+      "address": "57215 Stafford Mall, Bengaluru, Karnataka 44882",
+      "district": 369,
+      "latitude": 13.0175,
+      "longitude": 77.7499,
       "specialty": [
         6,
-        10
+        9
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Webster Ltd Hospital",
-      "address": "355 Montoya Plains, Bengaluru, Karnataka 86436",
-      "latitude": 13.0016,
-      "longitude": 77.689,
+      "name": "Hopkins PLC Hospital",
+      "address": "3703 Benjamin Wells, Bengaluru, Karnataka 21345",
+      "district": 369,
+      "latitude": 13.0669,
+      "longitude": 77.5052,
       "specialty": [
-        17,
-        16
+        9,
+        13
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Neal LLC Hospital",
-      "address": "63416 Maldonado Locks, Bengaluru, Karnataka 78593",
-      "latitude": 13.1264,
-      "longitude": 77.658,
+      "name": "Ponce-Lindsey Hospital",
+      "address": "900 Katie Brook Apt. 533, Bengaluru, Karnataka 14032",
+      "district": 369,
+      "latitude": 13.1674,
+      "longitude": 77.4988,
       "specialty": [
-        13,
-        10
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Ellison LLC Hospital",
-      "address": "6846 Danny Skyway, Bengaluru, Karnataka 00685",
-      "latitude": 13.1553,
-      "longitude": 77.6855,
-      "specialty": [
-        2,
-        6
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Christian LLC Hospital",
-      "address": "178 Sanders Way, Bengaluru, Karnataka 54667",
-      "latitude": 13.0896,
-      "longitude": 77.4627,
-      "specialty": [
-        18,
-        11
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Lang, Ramos and Lopez Hospital",
-      "address": "993 Ruiz Parkway Suite 923, Bengaluru, Karnataka 01778",
-      "latitude": 13.1715,
-      "longitude": 77.4925,
-      "specialty": [
-        11,
-        2
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Floyd, Huff and Peterson Hospital",
-      "address": "42373 Anthony Place Apt. 584, Bengaluru, Karnataka 06330",
-      "latitude": 12.8502,
-      "longitude": 77.7089,
-      "specialty": [
-        3,
-        2,
-        16
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Blake Ltd Hospital",
-      "address": "9415 Tapia Points, Bengaluru, Karnataka 54954",
-      "latitude": 12.9685,
-      "longitude": 77.6637,
-      "specialty": [
-        14,
-        3
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Watson-Morris Hospital",
-      "address": "39164 Jennings Tunnel Apt. 858, Bengaluru, Karnataka 26181",
-      "latitude": 13.1671,
-      "longitude": 77.5409,
-      "specialty": [
-        7,
-        16
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Allen PLC Hospital",
-      "address": "617 Madden Courts Apt. 863, Bengaluru, Karnataka 61361",
-      "latitude": 12.9904,
-      "longitude": 77.6439,
-      "specialty": [
-        13,
-        2
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Hernandez Inc Hospital",
-      "address": "337 Joseph Union Suite 552, Bengaluru, Karnataka 31214",
-      "latitude": 13.0532,
-      "longitude": 77.548,
-      "specialty": [
-        14,
+        1,
         15
       ]
     }
@@ -333,80 +439,85 @@
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Baldwin PLC Hospital",
-      "address": "266 Jon Ways Apt. 701, Bengaluru, Karnataka 97922",
-      "latitude": 13.0763,
-      "longitude": 77.71,
+      "name": "Collins PLC Hospital",
+      "address": "026 Summers Inlet Apt. 907, Bengaluru, Karnataka 15894",
+      "district": 369,
+      "latitude": 13.1525,
+      "longitude": 77.6851,
       "specialty": [
-        5,
         10,
-        3
+        7
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Martinez-Baldwin Hospital",
-      "address": "0485 Johnson View, Bengaluru, Karnataka 64639",
-      "latitude": 12.9593,
-      "longitude": 77.5218,
+      "name": "Williams-Wallace Hospital",
+      "address": "93440 Frey Ports, Bengaluru, Karnataka 44212",
+      "district": 369,
+      "latitude": 13.1566,
+      "longitude": 77.6109,
       "specialty": [
-        17,
-        4,
-        14
+        18,
+        7
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Johnson-Garcia Hospital",
-      "address": "88628 Michael Trail, Bengaluru, Karnataka 83010",
-      "latitude": 13.1404,
-      "longitude": 77.6836,
+      "name": "Norman, Velasquez and Ward Hospital",
+      "address": "82512 Joseph Ford Suite 119, Bengaluru, Karnataka 25694",
+      "district": 369,
+      "latitude": 12.9504,
+      "longitude": 77.6286,
       "specialty": [
-        15,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Wall-Bennett Hospital",
+      "address": "16195 Tamara Plain, Bengaluru, Karnataka 68975",
+      "district": 369,
+      "latitude": 13.0436,
+      "longitude": 77.5667,
+      "specialty": [
+        6,
+        1
+      ]
+    }
+  },
+  {
+    "model": "map.Hospital",
+    "fields": {
+      "name": "Myers, Smith and Gonzalez Hospital",
+      "address": "8655 Samuel Lock, Bengaluru, Karnataka 90316",
+      "district": 369,
+      "latitude": 12.9399,
+      "longitude": 77.5695,
+      "specialty": [
+        16,
         9,
-        6
+        10
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Ross Inc Hospital",
-      "address": "93191 Dunn Canyon Apt. 605, Bengaluru, Karnataka 59620",
-      "latitude": 13.0198,
-      "longitude": 77.5909,
+      "name": "Hartman Ltd Hospital",
+      "address": "603 Donna Cove, Bengaluru, Karnataka 46994",
+      "district": 369,
+      "latitude": 12.9239,
+      "longitude": 77.7064,
       "specialty": [
-        10,
-        6
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Miller-Molina Hospital",
-      "address": "2011 Diane Cape, Bengaluru, Karnataka 11801",
-      "latitude": 13.0222,
-      "longitude": 77.6279,
-      "specialty": [
+        13,
         7,
-        11
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Bowen, Jones and Shannon Hospital",
-      "address": "4956 May Field, Bengaluru, Karnataka 31431",
-      "latitude": 12.9672,
-      "longitude": 77.6704,
-      "specialty": [
-        17,
         5
       ]
     }
@@ -414,122 +525,59 @@
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Davidson-Leon Hospital",
-      "address": "290 Holland Brooks Suite 779, Bengaluru, Karnataka 13019",
-      "latitude": 12.9034,
-      "longitude": 77.6423,
+      "name": "Thompson Ltd Hospital",
+      "address": "233 Natalie Valleys, Bengaluru, Karnataka 66729",
+      "district": 369,
+      "latitude": 13.1063,
+      "longitude": 77.5732,
       "specialty": [
-        12,
-        8
+        7,
+        5,
+        11
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Vega, Spencer and Yu Hospital",
-      "address": "73056 Mary Wells, Bengaluru, Karnataka 71165",
-      "latitude": 12.9421,
-      "longitude": 77.7114,
+      "name": "Young, Davis and Gray Hospital",
+      "address": "2252 Morales Knolls, Bengaluru, Karnataka 77570",
+      "district": 369,
+      "latitude": 12.9624,
+      "longitude": 77.6196,
       "specialty": [
-        1,
-        6
+        3,
+        2,
+        9
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Henry Ltd Hospital",
-      "address": "73404 Chad Trail, Bengaluru, Karnataka 54819",
-      "latitude": 12.8576,
-      "longitude": 77.507,
+      "name": "Lozano, Walter and Graves Hospital",
+      "address": "36701 Potts Prairie Suite 227, Bengaluru, Karnataka 60905",
+      "district": 369,
+      "latitude": 13.0248,
+      "longitude": 77.4902,
       "specialty": [
-        16,
-        6,
-        14
+        10,
+        3,
+        11
       ]
     }
   },
   {
     "model": "map.Hospital",
     "fields": {
-      "name": "Boyd Inc Hospital",
-      "address": "7402 Silva Vista, Bengaluru, Karnataka 58888",
-      "latitude": 12.971,
+      "name": "Young and Sons Hospital",
+      "address": "09243 Green Unions Apt. 206, Bengaluru, Karnataka 60642",
+      "district": 369,
+      "latitude": 12.9081,
       "longitude": 77.6721,
       "specialty": [
-        2,
-        1,
-        17
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Carter, Hood and Anderson Hospital",
-      "address": "084 Marshall Springs Suite 115, Bengaluru, Karnataka 73809",
-      "latitude": 12.8834,
-      "longitude": 77.692,
-      "specialty": [
-        16,
-        9,
-        7
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Lane and Sons Hospital",
-      "address": "7061 Wanda Streets Suite 538, Bengaluru, Karnataka 60257",
-      "latitude": 12.9819,
-      "longitude": 77.4798,
-      "specialty": [
-        9,
-        3
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Ford, Everett and Heath Hospital",
-      "address": "08382 Mariah Summit Suite 479, Bengaluru, Karnataka 37823",
-      "latitude": 12.9882,
-      "longitude": 77.6017,
-      "specialty": [
-        12,
-        4,
-        7
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Kline, Benton and Holmes Hospital",
-      "address": "220 Amy Inlet, Bengaluru, Karnataka 32691",
-      "latitude": 12.9582,
-      "longitude": 77.4732,
-      "specialty": [
-        17,
-        8
-      ]
-    }
-  },
-  {
-    "model": "map.Hospital",
-    "fields": {
-      "name": "Shelton, Preston and Butler Hospital",
-      "address": "9417 Smith Freeway, Bengaluru, Karnataka 11433",
-      "latitude": 13.0251,
-      "longitude": 77.479,
-      "specialty": [
-        16,
-        4,
-        7
+        6,
+        11
       ]
     }
   }

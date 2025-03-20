@@ -60,6 +60,19 @@
       background-color: #2196F3;
       color: #fff;
     }
+    .navbar .logout-btn {
+      background: #f44336;
+      color: #fff;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+    .navbar .logout-btn:hover {
+      background-color: #e53935;
+    }
 
     /* Container for everything below the navbar */
     .main-container {
@@ -84,8 +97,14 @@
       margin-bottom: 5px;
       color: #2196F3;
     }
-
     
+    .filters-panel select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
 
     /* Specialty buttons container */
     #specialtyButtons {
@@ -176,8 +195,8 @@
     <div class="logo">MediFind</div>
     <div class="view-toggle">
       <!-- If you have a list view, you can handle toggling here -->
-      <button class="active">Map</button>
-    </div>
+      <button class="active">Map</button></div>
+      <button ><a href="{% url 'login' %}" class="logout-btn">Logout</a></button>
   </div>
 
   <!-- Main Container: Sidebar + Map -->
@@ -185,9 +204,22 @@
     <!-- Left Panel (Filters) -->
     <div class="filters-panel">
       
+      <!-- Dropdown for State -->
+      <h2>Select State</h2>
+      <select id="stateSelect" onchange="fetchDistricts()">
+        <option value="">-- Select State --</option>
+      </select>
+      
+      <!-- Dropdown for District -->
+      <h2>Select District</h2>
+      <select id="districtSelect">
+        <option value="">-- Select District --</option>
+      </select>
+      
+      <!-- Specialty Buttons -->
       <h2>Specialties</h2>
       <div id="specialtyButtons">
-        <!-- Dynamically populated -->
+        <!-- Dynamically populated specialty buttons -->
       </div>
 
       <!-- Search Button -->
@@ -204,10 +236,10 @@
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
     // Initialize map
-    const map = L.map('map').setView([12.9716, 77.5946], 12); // Center on Bangalore
+    const map = L.map('map').setView([12.9716, 77.5946], 12); // Example center point
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-    // Create a custom red icon for markers (similar to the screenshot)
+    // Custom red icon for markers
     const redIcon = L.icon({
       iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
       iconSize: [25, 41],
@@ -216,20 +248,13 @@
     });
 
     let selectedSpecialties = [];
+    let selectedState = "";
+    let selectedDistrict = "";
 
-    // Fetch specialties and create buttons
+    // Fetch and populate specialties
     fetch('/api/specialties/')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch specialties');
-        }
-        return response.json();
-      })
+      .then(response => response.json())
       .then(data => {
-        if (!data || data.length === 0) {
-          alert('No specialties found.');
-          return;
-        }
         const buttonContainer = document.getElementById('specialtyButtons');
         data.forEach(specialty => {
           const button = document.createElement('button');
@@ -243,6 +268,52 @@
         alert('Failed to load specialties.');
       });
 
+    // Fetch and populate states
+    function fetchStates() {
+      fetch('/api/states/')
+        .then(response => response.json())
+        .then(data => {
+          const stateSelect = document.getElementById('stateSelect');
+          data.forEach(state => {
+            const option = document.createElement('option');
+            option.value = state.id;  // or state.id if preferred
+            option.textContent = state.name;
+            stateSelect.appendChild(option);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching states:', error);
+          alert('Failed to load states.');
+        });
+    }
+
+    // Fetch and populate districts based on selected state
+    function fetchDistricts() {
+      const stateSelect = document.getElementById('stateSelect');
+      selectedState = stateSelect.value;
+      const districtSelect = document.getElementById('districtSelect');
+      // Clear previous options
+      districtSelect.innerHTML = '<option value="">-- Select District --</option>';
+
+      if (!selectedState) return;
+
+      // Assuming your endpoint supports filtering districts by state name
+      fetch(`/api/districts/?state_id=${encodeURIComponent(selectedState)}`)
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(district => {
+            const option = document.createElement('option');
+            option.value = district.id;  // or district.id if needed
+            option.textContent = district.name;
+            districtSelect.appendChild(option);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching districts:', error);
+          alert('Failed to load districts.');
+        });
+    }
+
     // Toggle specialty selection
     function toggleSpecialty(specialtyName, button) {
       const index = selectedSpecialties.indexOf(specialtyName);
@@ -255,26 +326,23 @@
       }
     }
 
-    // Fetch hospitals and place red markers
+    // Fetch hospitals using state, district, and specialties filters
     function fetchHospitals() {
-      // Optional: you could gather more filters here (city, minBeds, etc.) if your backend supports them
-      if (selectedSpecialties.length === 0) {
-        alert('Please select at least one specialty.');
-        return;
+      selectedDistrict = document.getElementById('districtSelect').value;
+
+      // Build query parameters
+      let params = [];
+      if (selectedState) params.push(`state_id=${encodeURIComponent(selectedState)}`);
+      if (selectedDistrict) params.push(`district_id=${encodeURIComponent(selectedDistrict)}`);
+      if (selectedSpecialties.length > 0) {
+        params = params.concat(selectedSpecialties.map(s => `specialties=${encodeURIComponent(s)}`));
       }
-      const url = `/api/hospitals/?${selectedSpecialties
-        .map(s => `specialties=${encodeURIComponent(s)}`)
-        .join('&')}`;
+      const url = `/api/hospitals/?${params.join('&')}`;
 
       fetch(url)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to fetch hospitals');
-          }
-          return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
-          // Remove existing markers
+          // Clear existing markers
           map.eachLayer(layer => {
             if (layer instanceof L.Marker) {
               map.removeLayer(layer);
@@ -282,18 +350,13 @@
           });
 
           if (!data || data.length === 0) {
-            alert('No hospitals found for the selected specialties.');
+            alert('No hospitals found for the selected filters.');
             return;
           }
 
-          // Add a marker for each hospital
           data.forEach(hospital => {
-            const marker = L.marker(
-              [hospital.latitude, hospital.longitude],
-              { icon: redIcon } // Use the custom red icon
-            ).bindPopup(
-              `<strong>${hospital.name}</strong><br>${hospital.address}`
-            );
+            const marker = L.marker([hospital.latitude, hospital.longitude], { icon: redIcon })
+              .bindPopup(`<strong>${hospital.name}</strong><br>${hospital.address}`);
             marker.addTo(map);
           });
         })
@@ -302,6 +365,9 @@
           alert('Failed to load hospitals.');
         });
     }
+
+    // Initial fetch for states when the page loads
+    window.onload = fetchStates;
   </script>
 </body>
 </html>
