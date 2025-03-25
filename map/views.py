@@ -39,27 +39,25 @@ def register_page(request):
 
 class hsv(View):
     def get(self, request):
-        state_param = request.GET.get('state', None)
-        district_param = request.GET.get('district', None)
+        state_id = request.GET.get('state_id', None)
+        district_id = request.GET.get('district_id', None)
         specialties = request.GET.getlist('specialties')
-        
 
         try:
             hospitals = Hospital.objects.all()
 
-            # Filter by state if provided
-            if state_param:
-                hospitals = hospitals.filter(district__state__name__icontains=state_param)
+            # Filter by state using state_id
+            if state_id:
+                hospitals = hospitals.filter(district__state__id=state_id)
             
-            # Filter by district if provided
-            if district_param:
-                hospitals = hospitals.filter(district__name__icontains=district_param)
+            # Filter by district using district_id
+            if district_id:
+                hospitals = hospitals.filter(district__id=district_id)
             
             # Filter by specialties if provided
             if specialties:
                 hospitals = hospitals.filter(specialty__name__in=specialties).distinct()
 
-            # Prepare data for JSON response
             data = [
                 {
                     "name": hospital.name,
@@ -72,11 +70,11 @@ class hsv(View):
                 }
                 for hospital in hospitals
             ]
-            
             return JsonResponse(data, safe=False)
         
         except Exception as e:
             return JsonResponse({'error': str(e)}, status=400)
+
     
 class SpecialtyListView(View):
     def get(self, request):
